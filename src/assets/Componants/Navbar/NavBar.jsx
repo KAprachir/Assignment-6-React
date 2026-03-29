@@ -5,7 +5,7 @@ import { ShoppingCart } from "lucide-react";
 const Navbar = () => {
   return (
     <div className="bg-base-100 shadow-sm">
-      <div className="w-10/12 mx-auto">
+      <div className="w-full md:w-10/12 mx-auto">
         <div className="navbar">
           <div className="navbar-start">
             <div className="dropdown">
