@@ -3,7 +3,6 @@ import PriceCard from "../ui/PriceCard";
 
 const PricingSection = ({ pricePromise }) => {
   const cardsData = use(pricePromise);
-  console.log(cardsData);
   return (
     <div className="w-10/12 mx-auto my-10">
       <div className="text-center space-y-2">
@@ -14,7 +13,7 @@ const PricingSection = ({ pricePromise }) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
         {cardsData.map((card, ind) => (
-          <PriceCard card={card} ind={ind}></PriceCard>
+          <PriceCard key={card.name} card={card} ind={ind}></PriceCard>
         ))}
       </div>
     </div>

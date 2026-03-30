@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "name": "AI Writing Pro",
+    "description": "Generate high-quality content, blogs, and marketing copy in seconds with advanced AI.",
+    "price": 29,
+    "period": "monthly",
+    "tag": "Best Seller",
+    "tagType": "best seller",
+    "features": [
+      "Unlimited AI generations",
+      "50+ writing templates",
+      "Grammar & tone checker",
+      "SEO-optimized content",
+      "Export to PDF & DOCX"
+    ],
+    "icon": "/src/assets/products/writing_2327400 1.png"
+  },
+  {
+    "id": 2,
+    "name": "AI Blog Engine",
+    "description": "Plan, write, and publish full blog posts with AI — from outline to finished article in minutes.",
+    "price": 19,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "Auto blog outline generator",
+      "Long-form article writer (5000+ words)",
+      "Keyword integration",
+      "Plagiarism checker",
+      "WordPress & Medium export"
+    ],
+    "icon": "/src/assets/products/design-tool.png"
+  },
+  {
+    "id": 3,
+    "name": "AI Email Copywriter",
+    "description": "Craft cold emails, newsletters, and drip campaigns that convert — powered by AI.",
+    "price": 15,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "Cold email sequences",
+      "Subject line optimizer",
+      "A/B variant generator",
+      "Tone personalization",
+      "Mailchimp & HubSpot integration"
+    ],
+    "icon": "/src/assets/products/operation.png"
+  },
+  {
+    "id": 4,
+    "name": "Social Caption AI",
+    "description": "Generate scroll-stopping captions for Instagram, LinkedIn, X, and TikTok in one click.",
+    "price": 12,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "Platform-specific tone",
+      "Hashtag suggestions",
+      "Emoji auto-insert",
+      "Bulk caption generator",
+      "Content calendar planner"
+    ],
+    "icon": "/src/assets/products/social-media.png"
+  },
+  {
+    "id": 5,
+    "name": "AI Ad Copy Studio",
+    "description": "Write high-converting ad copy for Google, Meta, and LinkedIn campaigns instantly.",
+    "price": 24,
+    "period": "monthly",
+    "tag": "Best Seller",
+    "tagType": "best seller",
+    "features": [
+      "Google & Meta ad formats",
+      "CTA optimizer",
+      "Audience targeting copy",
+      "300+ ad copy templates",
+      "Performance score prediction"
+    ],
+    "icon": "/src/assets/products/portfolio.png"
+  },
+  {
+    "id": 6,
+    "name": "AI Script Writer",
+    "description": "Write YouTube scripts, podcast intros, and video narrations with AI in your brand voice.",
+    "price": 22,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "YouTube & Reel script formats",
+      "Hook & CTA suggestions",
+      "Brand voice training",
+      "Scene-by-scene breakdown",
+      "Teleprompter-ready export"
+    ],
+    "icon": "/src/assets/products/shopping-cart.png"
+  }
+]
