@@ -12,7 +12,7 @@ const GetStart = () => {
           Start using premium digital tools in minutes, not hours.
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         <div className="border-2 border-gray-200 rounded-2xl bg-base-100 shadow-sm p-20 justify-items-center text-center space-y-4 relative">
           <div className="bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)] p-4 rounded-full absolute top-5 right-5 z-10">
             <h2 className="text-3xl text-white font-extraboldbold">01</h2>
