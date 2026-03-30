@@ -5,7 +5,7 @@ import { Circle, Play } from "lucide-react";
 const Hero = () => {
   return (
     <div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 w-10/12 mx-auto justify-center items-center p-2 md:p-20 gap-10">
+      <div className="grid grid-cols-1 xl:grid-cols-2 w-10/12 mx-auto justify-center items-center p-2 md:p-20 gap-10">
         <div className="space-y-5">
           <div className="badge badge-soft badge-info p-4 text-[10px] lg:text-lg rounded-full">
             <Circle /> New: AI-Powered Tools Available

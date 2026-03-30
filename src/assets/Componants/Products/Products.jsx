@@ -16,16 +16,16 @@ const Products = ({ productPromise }) => {
           designed <br />
           to boost your productivity and creativity.
         </p>
-        <div>
+        <div className="flex gap-1 bg-base-200 p-2 rounded-4xl">
           <button
             onClick={() => setActiveTab("product")}
-            className={`btn text-white font-bold rounded-4xl ${activeTab === "product" ? "bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)]" : "btn-soft"}`}
+            className={`btn text-lg rounded-4xl ${activeTab === "product" ? "text-white bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)]" : "bg-base-100"}`}
           >
             Products
           </button>
           <button
             onClick={() => setActiveTab("cart")}
-            className={`btn text-white font-bold rounded-4xl ${activeTab === "cart" ? "bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)]" : "btn-soft"}`}
+            className={`btn text-lg rounded-4xl ${activeTab === "cart" ? "text-white bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)]" : "bg-base-100"}`}
           >
             Cart <span>(0)</span>
           </button>

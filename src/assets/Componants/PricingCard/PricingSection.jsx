@@ -11,7 +11,7 @@ const PricingSection = ({ pricePromise }) => {
           Choose the plan that fits your needs. Upgrade or downgrade anytime.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-15">
         {cardsData.map((card, ind) => (
           <PriceCard key={card.name} card={card} ind={ind}></PriceCard>
         ))}
