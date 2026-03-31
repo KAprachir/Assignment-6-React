@@ -1,10 +1,13 @@
 import React, { use, useState } from "react";
 import ProductCard from "../ui/ProductCard";
+import Cart from "../ui/Cart";
 
 const Products = ({ productPromise }) => {
   const productData = use(productPromise);
 
   const [activeTab, setActiveTab] = useState("product");
+
+  const [selectProduct, setSelectProduct] = useState([]);
 
   return (
     <div className="w-10/12 mx-auto my-20">
@@ -31,7 +34,19 @@ const Products = ({ productPromise }) => {
           </button>
         </div>
       </div>
-      <ProductCard productData={productData}></ProductCard>
+
+      {activeTab === "product" ? (
+        <ProductCard
+          productData={productData}
+          selectProduct={selectProduct}
+          setSelectProduct={setSelectProduct}
+        ></ProductCard>
+      ) : (
+        <Cart
+          selectProduct={selectProduct}
+          setSelectProduct={setSelectProduct}
+        ></Cart>
+      )}
     </div>
   );
 };
