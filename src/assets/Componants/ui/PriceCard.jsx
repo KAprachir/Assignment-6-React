@@ -6,44 +6,70 @@ const PriceCard = ({ card }) => {
 
   return (
     <div
-      className={`flex flex-col p-8 rounded-2xl shadow-sm border border-base-300 h-full relative transition-all ${
+      className={`group flex flex-col p-8 rounded-3xl border transition-all duration-300 h-full relative 
+      ${
         isHighlighted
-          ? "bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)] text-white scale-105 z-10 shadow-xl"
-          : "bg-base-200 text-base-content"
+          ? "bg-linear-to-b from-[#4f39f6] to-[#9514fa] text-white scale-105 z-10 shadow-[0_20px_50px_rgba(79,57,246,0.3)] border-transparent"
+          : "bg-white text-slate-800 border-slate-100 hover:border-fuchsia-200 shadow-sm hover:shadow-xl"
       }`}
     >
       {card.badge && (
-        <div className="badge badge-soft badge-warning text-red-600 p-3 font-bold absolute -top-3 left-1/2 -translate-x-1/2 z-20 shadow-md whitespace-nowrap">
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-900 text-[10px] font-black uppercase tracking-widest py-1 px-4 rounded-full shadow-lg">
           {card.badge}
-        </div>
+        </span>
       )}
 
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold">{card.name}</h1>
-        <p className="text-sm opacity-70">{card.tagline}</p>
+      <div className="mb-8">
+        <h3
+          className={`text-2xl font-bold mb-1 ${isHighlighted ? "text-white" : "text-slate-900"}`}
+        >
+          {card.name}
+        </h3>
+        <p
+          className={`text-sm font-medium ${isHighlighted ? "text-white/80" : "text-slate-500"}`}
+        >
+          {card.tagline}
+        </p>
       </div>
 
-      <div className="flex-1">
-        <h2 className="text-4xl font-black mb-6">
-          ${card.price.amount}
-          <span className="text-base font-normal opacity-60">
+      <div className="mb-8">
+        <div className="flex items-baseline gap-1">
+          <span className="text-5xl font-black">${card.price.amount}</span>
+          <span
+            className={`text-lg font-medium ${isHighlighted ? "text-white/60" : "text-slate-400"}`}
+          >
             /{card.price.period}
           </span>
-        </h2>
-
-        <div className="space-y-3 mb-8">
-          {card.features.map((feature, index) => (
-            <p key={index} className="flex gap-3 items-start text-sm">
-              <Check className="text-success shrink-0" size={18} />
-              {feature}
-            </p>
-          ))}
         </div>
+      </div>
+
+      <div className="grow space-y-4 mb-10">
+        {card.features.map((feature, index) => (
+          <div key={index} className="flex gap-3 items-start">
+            <div
+              className={`mt-1 p-0.5 rounded-full ${isHighlighted ? "bg-white/20" : "bg-fuchsia-50"}`}
+            >
+              <Check
+                className={isHighlighted ? "text-white" : "text-fuchsia-600"}
+                size={14}
+                strokeWidth={3}
+              />
+            </div>
+            <span
+              className={`text-sm leading-tight ${isHighlighted ? "text-white/90" : "text-slate-600"}`}
+            >
+              {feature}
+            </span>
+          </div>
+        ))}
       </div>
 
       <button
-        className={`btn w-full ${
-          card.cta.type === "primary" ? "btn-primary" : "btn-outline"
+        className={`w-full py-4 rounded-2xl font-bold text-sm transition-all active:scale-95 shadow-md
+        ${
+          isHighlighted
+            ? "bg-white text-[#4f39f6] hover:bg-slate-50"
+            : "bg-slate-900 text-white hover:bg-slate-800"
         }`}
       >
         {card.cta.label}

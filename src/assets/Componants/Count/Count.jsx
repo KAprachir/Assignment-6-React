@@ -1,23 +1,29 @@
 import React from "react";
 
+const STATS = [
+  { label: "Active Users", value: "50k+" },
+  { label: "Premium Tools", value: "200+" },
+  { label: "Rating", value: "4.9/5" },
+];
+
 const Count = () => {
   return (
-    <div className="bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)]">
-      <div className="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5 p-15 text-center">
-        <div>
-          <h1 className="text-[60px] text-white">50k+</h1>
-          <p className="text-2xl text-white">Active User</p>
-        </div>
-        <div>
-          <h1 className="text-[60px] text-white">200+</h1>
-          <p className="text-2xl text-white">Premium Tools</p>
-        </div>
-        <div>
-          <h1 className="text-[60px] text-white">4.9</h1>
-          <p className="text-2xl text-white">Rating</p>
+    <section className="bg-linear-to-b from-[#4f39f6] to-[#9514fa]">
+      <div className="max-w-7xl w-11/12 mx-auto py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          {STATS.map((stat, index) => (
+            <div key={index} className="space-y-2">
+              <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight">
+                {stat.value}
+              </h2>
+              <p className="text-lg md:text-xl text-white/80 font-medium uppercase tracking-wide">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

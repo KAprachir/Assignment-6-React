@@ -7,6 +7,7 @@ const Cart = ({ selectProduct, setSelectProduct, total, setTotal }) => {
     setSelectProduct(fiterProduct);
     setTotal(total - product.price);
   };
+
   const handleCheckout = () => {
     setSelectProduct([]);
     setTotal(0);
@@ -22,39 +23,57 @@ const Cart = ({ selectProduct, setSelectProduct, total, setTotal }) => {
       transition: Bounce,
     });
   };
-  return (
-    <div className="w-10/12 mx-auto p-5 bg-base-100 shadow-sm rounded-2xl">
-      <h1 className="text-2xl">Your Cart</h1>
 
-      {selectProduct.length === 0 ? (
-        <div className=" bg-base-100 p-5 my-4">
-          <div className="flex flex-col items-center justify-center p-5">
-            <h1 className="text-5xl font-bold text-center">
-              No Product is Added
-            </h1>
-            <p className="text-xl text-[#627382] font-bold text-center">
-              Go to the Product Tab and Buy Now
-            </p>
+  return (
+    <div className="w-full max-w-3xl mx-auto p-6 md:p-10 bg-white border border-gray-100 shadow-xl rounded-3xl">
+      <h2 className="text-3xl font-black text-slate-900 mb-8 px-2">
+        Your Cart
+      </h2>
+
+      <div className="space-y-4 mb-8">
+        {selectProduct.length === 0 ? (
+          <div className="py-16 px-6 border-2 border-dashed border-gray-100 rounded-3xl bg-slate-50/50">
+            <div className="flex flex-col items-center justify-center space-y-3">
+              <h3 className="text-3xl font-extrabold text-slate-400 text-center">
+                Your cart is empty
+              </h3>
+              <p className="text-gray-400 font-medium text-center">
+                Go to the Product Tab to add some premium tools.
+              </p>
+            </div>
           </div>
-        </div>
-      ) : (
-        selectProduct.map((product) => (
-          <CartCard
-            product={product}
-            handleRemoveProduct={handleRemoveProduct}
-          ></CartCard>
-        ))
-      )}
-      <div className="flex justify-between items-center my-4 mx-4">
-        <h3 className="text-xl">Total</h3>
-        <p className="text-2xl font-bold">${total}</p>
+        ) : (
+          selectProduct.map((product) => (
+            <CartCard
+              key={product.id}
+              product={product}
+              handleRemoveProduct={handleRemoveProduct}
+            />
+          ))
+        )}
       </div>
-      <button
-        onClick={() => handleCheckout()}
-        className="btn w-full p-2 bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)] text-lg font-bold text-amber-50 rounded-4xl"
-      >
-        Proceed to Checkout
-      </button>
+
+      <div className="border-t border-gray-100 pt-6 px-4">
+        <div className="flex justify-between items-center mb-8">
+          <span className="text-xl font-bold text-gray-500">Order Total</span>
+          <span className="text-4xl font-black text-slate-900 tracking-tight">
+            ${total.toFixed(2)}
+          </span>
+        </div>
+
+        <button
+          onClick={handleCheckout}
+          disabled={selectProduct.length === 0}
+          className={`w-full py-4 text-lg font-bold text-white rounded-2xl transition-all shadow-lg active:scale-[0.98] 
+            ${
+              selectProduct.length === 0
+                ? "bg-gray-200 cursor-not-allowed text-gray-400 shadow-none"
+                : "bg-linear-to-r from-[#4f39f6] to-[#9514fa] hover:opacity-90 hover:shadow-indigo-200"
+            }`}
+        >
+          Proceed to Checkout
+        </button>
+      </div>
     </div>
   );
 };

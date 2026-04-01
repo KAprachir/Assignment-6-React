@@ -1,136 +1,82 @@
 import React from "react";
 import logoImg from "../../../assets/digitools.png";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Menu } from "lucide-react";
 
-const Navbar = ({ selectProduct }) => {
+const Navbar = ({ selectProduct = [] }) => {
+  const navLinks = [
+    { name: "Products", href: "#" },
+    { name: "Features", href: "#" },
+    { name: "Pricing", href: "#" },
+    { name: "Testimonials", href: "#" },
+    { name: "FAQ", href: "#" },
+  ];
+
   return (
-    <div className="bg-base-100 shadow-sm">
-      <div className="w-full md:w-10/12 mx-auto">
-        <div className="navbar">
-          <div className="navbar-start">
-            <div className="dropdown">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost lg:hidden"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  {" "}
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />{" "}
-                </svg>
-              </div>
-              <ul
-                tabIndex="-1"
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-              >
-                <li>
-                  <a>Products</a>
+    <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <div className="w-11/12 max-w-7xl mx-auto navbar px-0">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden p-2">
+              <Menu size={24} />
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-1 p-4 shadow-2xl bg-base-100 rounded-2xl w-64 gap-2"
+            >
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a className="font-medium">{link.name}</a>
                 </li>
-                <li>
-                  <a>Features</a>
-                </li>
-                <li>
-                  <a>Pricing</a>
-                </li>
-                <li>
-                  <a>Testimonials</a>
-                </li>
-                <li>
-                  <a>FAQ</a>
-                </li>
-                <li>
-                  <div className="indicator">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      {" "}
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                      />{" "}
-                    </svg>
-                    <span className="badge badge-sm indicator-item">
-                      {selectProduct.length}
-                    </span>
-                  </div>
-                </li>
-                <li>
-                  <a className="btn btn-ghost">Login</a>
-                </li>
-                <li>
-                  <a className="btn rounded-full bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)] text-white font-bold ">
-                    Get Started
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <img src={logoImg} alt="" />
-          </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+              ))}
+              <hr className="my-2 opacity-10" />
               <li>
-                <a>Products</a>
+                <button className="btn btn-ghost justify-start">Login</button>
               </li>
               <li>
-                <a>Features</a>
-              </li>
-              <li>
-                <a>Pricing</a>
-              </li>
-              <li>
-                <a>Testimonials</a>
-              </li>
-              <li>
-                <a>FAQ</a>
+                <button className="btn btn-primary bg-linear-to-r from-[#4f39f6] to-[#9514fa] border-none text-white">
+                  Get Started
+                </button>
               </li>
             </ul>
           </div>
-          <div className="navbar-end gap-3">
-            <div className="indicator hidden lg:flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {" "}
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />{" "}
-              </svg>
-              <span className="badge badge-sm indicator-item">
+          <a href="/" className="flex items-center gap-2">
+            <img src={logoImg} alt="Logo" className="h-8 md:h-10 w-auto" />
+          </a>
+        </div>
+
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 gap-2">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <a className="hover:text-[#4f39f6] font-medium transition-colors">
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="navbar-end gap-2 md:gap-4">
+          <div className="indicator mr-2 cursor-pointer hover:opacity-80 transition-opacity">
+            <ShoppingCart size={22} className="text-gray-700" />
+            {selectProduct.length > 0 && (
+              <span className="badge badge-sm indicator-item bg-fuchsia-600 border-none text-white animate-bounce">
                 {selectProduct.length}
               </span>
-            </div>
-            <a className="btn btn-ghost hidden lg:flex">Login</a>
-            <a className="btn rounded-full bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)] text-white font-bold hidden lg:flex">
+            )}
+          </div>
+
+          <div className="hidden sm:flex gap-3">
+            <button className="btn btn-ghost font-semibold hidden lg:inline-flex">
+              Login
+            </button>
+            <button className="btn px-6 rounded-full bg-linear-to-r from-[#4f39f6] to-[#9514fa] hover:opacity-90 text-white font-bold border-none transition-all shadow-md hover:shadow-lg active:scale-95">
               Get Started
-            </a>
+            </button>
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

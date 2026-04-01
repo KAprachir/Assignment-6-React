@@ -4,54 +4,72 @@ import Cart from "../ui/Cart";
 
 const Products = ({ productPromise, selectProduct, setSelectProduct }) => {
   const productData = use(productPromise);
-
   const [activeTab, setActiveTab] = useState("product");
-
   const [total, setTotal] = useState(0);
 
   return (
-    <div className="w-10/12 mx-auto my-20">
-      {/* card Header */}
-      <div className="flex flex-col items-center justify-center text-center">
-        <h1 className="text-5xl font-extrabold">Premium Digital Tools</h1>
-        <p className="my-5">
+    <section className="w-11/12 max-w-7xl mx-auto py-20">
+      <div className="flex flex-col items-center justify-center text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900">
+          Premium Digital Tools
+        </h2>
+        <p className="text-gray-500 text-lg max-w-2xl mt-4 mb-8 leading-relaxed">
           Choose from our curated collection of premium digital products
-          designed <br />
-          to boost your productivity and creativity.
+          designed to boost your productivity and creativity.
         </p>
-        <div className="flex gap-1 bg-base-200 p-2 rounded-4xl">
+
+        <div className="inline-flex p-1.5 bg-gray-100 rounded-full border border-gray-200">
           <button
             onClick={() => setActiveTab("product")}
-            className={`btn text-lg rounded-4xl ${activeTab === "product" ? "text-white bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)]" : "bg-base-100"}`}
+            className={`px-8 py-3 text-sm font-bold rounded-full transition-all duration-300 ${
+              activeTab === "product"
+                ? "bg-linear-to-r from-[#4f39f6] to-[#9514fa] text-white shadow-lg"
+                : "text-gray-500 hover:text-slate-900"
+            }`}
           >
-            Products
+            All Products
           </button>
           <button
             onClick={() => setActiveTab("cart")}
-            className={`btn text-lg rounded-4xl ${activeTab === "cart" ? "text-white bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)]" : "bg-base-100"}`}
+            className={`px-8 py-3 text-sm font-bold rounded-full transition-all duration-300 flex items-center gap-2 ${
+              activeTab === "cart"
+                ? "bg-linear-to-r from-[#4f39f6] to-[#9514fa] text-white shadow-lg"
+                : "text-gray-500 hover:text-slate-900"
+            }`}
           >
-            Cart <span>({selectProduct.length})</span>
+            Your Cart
+            <span
+              className={`px-2 py-0.5 rounded-full text-xs ${
+                activeTab === "cart"
+                  ? "bg-white/20 text-white"
+                  : "bg-gray-200 text-gray-600"
+              }`}
+            >
+              {selectProduct.length}
+            </span>
           </button>
         </div>
       </div>
 
-      {activeTab === "product" ? (
-        <ProductCard
-          productData={productData}
-          selectProduct={selectProduct}
-          setSelectProduct={setSelectProduct}
-          total={total}
-          setTotal={setTotal}
-        ></ProductCard>
-      ) : (
-        <Cart
-          selectProduct={selectProduct}
-          setSelectProduct={setSelectProduct}
-          total={total}
-          setTotal={setTotal}
-        ></Cart>
-      )}
-    </div>
+      <div className="mt-4 transition-all duration-500 ease-in-out">
+        {activeTab === "product" ? (
+          <ProductCard
+            productData={productData}
+            selectProduct={selectProduct}
+            setSelectProduct={setSelectProduct}
+            total={total}
+            setTotal={setTotal}
+          />
+        ) : (
+          <Cart
+            selectProduct={selectProduct}
+            setSelectProduct={setSelectProduct}
+            total={total}
+            setTotal={setTotal}
+          />
+        )}
+      </div>
+    </section>
   );
 };
 
