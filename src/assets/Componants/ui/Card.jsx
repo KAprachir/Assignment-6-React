@@ -1,11 +1,19 @@
 import React from "react";
 import { Check } from "lucide-react";
 
-const Card = ({ product, selectProduct, setSelectProduct }) => {
+const Card = ({
+  product,
+  selectProduct,
+  setSelectProduct,
+  total,
+  setTotal,
+}) => {
   const { id, name, description, price, tag, features, icon } = product;
 
   const buyBtnHandle = () => {
-    setSelectProduct(...selectProduct, product);
+    console.log("btn clicked");
+    setSelectProduct([...selectProduct, product]);
+    setTotal(total + price);
   };
   return (
     <div

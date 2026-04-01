@@ -2,12 +2,12 @@ import React, { use, useState } from "react";
 import ProductCard from "../ui/ProductCard";
 import Cart from "../ui/Cart";
 
-const Products = ({ productPromise }) => {
+const Products = ({ productPromise, selectProduct, setSelectProduct }) => {
   const productData = use(productPromise);
 
   const [activeTab, setActiveTab] = useState("product");
 
-  const [selectProduct, setSelectProduct] = useState([]);
+  const [total, setTotal] = useState(0);
 
   return (
     <div className="w-10/12 mx-auto my-20">
@@ -30,7 +30,7 @@ const Products = ({ productPromise }) => {
             onClick={() => setActiveTab("cart")}
             className={`btn text-lg rounded-4xl ${activeTab === "cart" ? "text-white bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)]" : "bg-base-100"}`}
           >
-            Cart <span>(0)</span>
+            Cart <span>({selectProduct.length})</span>
           </button>
         </div>
       </div>
@@ -40,11 +40,15 @@ const Products = ({ productPromise }) => {
           productData={productData}
           selectProduct={selectProduct}
           setSelectProduct={setSelectProduct}
+          total={total}
+          setTotal={setTotal}
         ></ProductCard>
       ) : (
         <Cart
           selectProduct={selectProduct}
           setSelectProduct={setSelectProduct}
+          total={total}
+          setTotal={setTotal}
         ></Cart>
       )}
     </div>
