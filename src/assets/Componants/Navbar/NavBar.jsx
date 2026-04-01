@@ -49,6 +49,36 @@ const Navbar = ({ selectProduct }) => {
                 <li>
                   <a>FAQ</a>
                 </li>
+                <li>
+                  <div className="indicator">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      {" "}
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                      />{" "}
+                    </svg>
+                    <span className="badge badge-sm indicator-item">
+                      {selectProduct.length}
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <a className="btn btn-ghost">Login</a>
+                </li>
+                <li>
+                  <a className="btn rounded-full bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)] text-white font-bold ">
+                    Get Started
+                  </a>
+                </li>
               </ul>
             </div>
             <img src={logoImg} alt="" />
@@ -73,7 +103,7 @@ const Navbar = ({ selectProduct }) => {
             </ul>
           </div>
           <div className="navbar-end gap-3">
-            <div className="indicator">
+            <div className="indicator hidden lg:flex">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -93,8 +123,8 @@ const Navbar = ({ selectProduct }) => {
                 {selectProduct.length}
               </span>
             </div>
-            <a className="btn btn-ghost">Login</a>
-            <a className="btn rounded-full bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)] text-white font-bold">
+            <a className="btn btn-ghost hidden lg:flex">Login</a>
+            <a className="btn rounded-full bg-[linear-gradient(to_bottom,rgba(79,57,246,1)_0%,rgba(149,20,250,1)_100%)] text-white font-bold hidden lg:flex">
               Get Started
             </a>
           </div>

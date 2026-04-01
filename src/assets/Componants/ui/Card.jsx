@@ -1,5 +1,6 @@
 import React from "react";
 import { Check } from "lucide-react";
+import { Bounce, toast } from "react-toastify";
 
 const Card = ({
   product,
@@ -14,13 +15,34 @@ const Card = ({
     console.log("btn clicked");
     setSelectProduct([...selectProduct, product]);
     setTotal(total + price);
+    toast.success(`${name} is add to cart`, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
   return (
     <div
       key={id}
       className=" flex flex-col border-2 border-gray-300 p-10 bg-base-100 shadow-sm rounded-2xl space-y-5 relative"
     >
-      <div className="badge absolute top-5 right-10">{tag}</div>
+      <div
+        className={`badge absolute top-5 right-10 ${
+          tag === "Best Seller"
+            ? "badge-accent"
+            : tag === "Popular"
+              ? "badge-info"
+              : "badge-secondary"
+        }`}
+      >
+        {tag}
+      </div>
       <div className="space-y-5 flex-1">
         <img
           src={icon}

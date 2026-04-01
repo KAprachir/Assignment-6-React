@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+import { Bounce, toast } from "react-toastify";
 import CartCard from "./CartCard";
 
 const Cart = ({ selectProduct, setSelectProduct, total, setTotal }) => {
@@ -10,19 +10,29 @@ const Cart = ({ selectProduct, setSelectProduct, total, setTotal }) => {
   const handleCheckout = () => {
     setSelectProduct([]);
     setTotal(0);
-    toast.success("Thank you for your purchase!");
+    toast.success("Thank you for your purchase!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
   return (
     <div className="w-10/12 mx-auto p-5 bg-base-100 shadow-sm rounded-2xl">
       <h1 className="text-2xl">Your Cart</h1>
 
       {selectProduct.length === 0 ? (
-        <div className=" p-10 bg-base-200 shodow">
+        <div className=" bg-base-100 p-5 my-4">
           <div className="flex flex-col items-center justify-center p-5">
             <h1 className="text-5xl font-bold text-center">
               No Product is Added
             </h1>
-            <p className="text-xl font-bold text-center">
+            <p className="text-xl text-[#627382] font-bold text-center">
               Go to the Product Tab and Buy Now
             </p>
           </div>

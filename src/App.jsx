@@ -6,7 +6,7 @@ import Hero from "./assets/Componants/Hero/Hero";
 import Navbar from "./assets/Componants/Navbar/Navbar";
 import PricingSection from "./assets/Componants/PricingCard/PricingSection";
 import Products from "./assets/Componants/Products/Products";
-import { ToastContainer } from "react-toastify";
+import { Bounce, ToastContainer } from "react-toastify";
 
 const fetchPrice = async () => {
   const res = await fetch("Pricing.json");
@@ -45,7 +45,19 @@ function App() {
           <PricingSection pricePromise={pricePromise}></PricingSection>
         </Suspense>
 
-        <ToastContainer />
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
       </div>
     </>
   );
