@@ -73,4 +73,4 @@ npm run lint      # Lint with ESLint
 
 ## License
 
-MIT © [Prachir](https://github.com/your-username)
+MIT © [Prachir](https://github.com/kaprachir)
