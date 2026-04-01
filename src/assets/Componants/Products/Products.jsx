@@ -10,7 +10,7 @@ const Products = ({ productPromise, selectProduct, setSelectProduct }) => {
   return (
     <section className="w-11/12 max-w-7xl mx-auto py-20">
       <div className="flex flex-col items-center justify-center text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900">
+        <h2 className="text-4xl md:text-5xl font-black tracking-tight">
           Premium Digital Tools
         </h2>
         <p className="text-gray-500 text-lg max-w-2xl mt-4 mb-8 leading-relaxed">

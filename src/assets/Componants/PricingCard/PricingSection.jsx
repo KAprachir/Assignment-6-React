@@ -7,7 +7,7 @@ const PricingSection = ({ pricePromise }) => {
   return (
     <section className="w-11/12 max-w-7xl mx-auto py-16 md:py-24">
       <div className="text-center space-y-4 mb-12 md:mb-16">
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900">
+        <h2 className="text-4xl md:text-5xl font-black tracking-tight">
           Simple, Transparent Pricing
         </h2>
         <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">

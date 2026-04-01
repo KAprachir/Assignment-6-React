@@ -6,6 +6,11 @@ const Cart = ({ selectProduct, setSelectProduct, total, setTotal }) => {
     const fiterProduct = selectProduct.filter((item) => item.id != product.id);
     setSelectProduct(fiterProduct);
     setTotal(total - product.price);
+    toast.success(`${product.name} remove from cart!`, {
+      position: "top-center",
+      transition: Bounce,
+      autoClose: 3000,
+    });
   };
 
   const handleCheckout = () => {

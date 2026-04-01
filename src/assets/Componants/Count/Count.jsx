@@ -3,7 +3,7 @@ import React from "react";
 const STATS = [
   { label: "Active Users", value: "50k+" },
   { label: "Premium Tools", value: "200+" },
-  { label: "Rating", value: "4.9/5" },
+  { label: "Rating", value: "4.9" },
 ];
 
 const Count = () => {
