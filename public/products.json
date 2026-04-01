@@ -14,7 +14,7 @@
       "SEO-optimized content",
       "Export to PDF & DOCX"
     ],
-    "icon": "/src/assets/products/writing_2327400 1.png"
+    "icon": "https://i.ibb.co.com/4ZhB11jH/writing-2327400-1.png"
   },
   {
     "id": 2,
@@ -31,7 +31,7 @@
       "Plagiarism checker",
       "WordPress & Medium export"
     ],
-    "icon": "/src/assets/products/design-tool.png"
+    "icon": "https://i.ibb.co.com/ZzNQfZ0f/design-tool.png"
   },
   {
     "id": 3,
@@ -48,7 +48,7 @@
       "Tone personalization",
       "Mailchimp & HubSpot integration"
     ],
-    "icon": "/src/assets/products/operation.png"
+    "icon": "https://i.ibb.co.com/yc66CwWV/operation.png"
   },
   {
     "id": 4,
@@ -65,7 +65,7 @@
       "Bulk caption generator",
       "Content calendar planner"
     ],
-    "icon": "/src/assets/products/social-media.png"
+    "icon": "https://i.ibb.co.com/S4zPqxMq/social-media.png"
   },
   {
     "id": 5,
@@ -82,7 +82,7 @@
       "300+ ad copy templates",
       "Performance score prediction"
     ],
-    "icon": "/src/assets/products/portfolio.png"
+    "icon": "https://i.ibb.co.com/spBP0f2N/portfolio.png"
   },
   {
     "id": 6,
@@ -99,6 +99,6 @@
       "Scene-by-scene breakdown",
       "Teleprompter-ready export"
     ],
-    "icon": "/src/assets/products/shopping-cart.png"
+    "icon": "https://i.ibb.co.com/yc66CwWV/operation.png"
   }
 ]

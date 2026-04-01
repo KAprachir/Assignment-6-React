@@ -7,6 +7,8 @@ import Navbar from "./assets/Componants/Navbar/Navbar";
 import PricingSection from "./assets/Componants/PricingCard/PricingSection";
 import Products from "./assets/Componants/Products/Products";
 import { Bounce, ToastContainer } from "react-toastify";
+import Footer from "./assets/Componants/Footer/Footer";
+import PreFooter from "./assets/Componants/Footer/PreFooter";
 
 const fetchPrice = async () => {
   const res = await fetch("Pricing.json");
@@ -44,6 +46,8 @@ function App() {
         >
           <PricingSection pricePromise={pricePromise}></PricingSection>
         </Suspense>
+        <PreFooter></PreFooter>
+        <Footer></Footer>
 
         <ToastContainer
           position="top-center"

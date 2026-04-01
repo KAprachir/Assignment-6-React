@@ -7,7 +7,7 @@ const GetStart = () => {
   return (
     <div className="w-10/12 mx-auto">
       <div className=" text-center my-10">
-        <h1 className="text-5xl mb-2">Get Started in 3 Steps</h1>
+        <h1 className="text-5xl font-extrabold mb-2">Get Started in 3 Steps</h1>
         <p className="text-[#627382]">
           Start using premium digital tools in minutes, not hours.
         </p>
